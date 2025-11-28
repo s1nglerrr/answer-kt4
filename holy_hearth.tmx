@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="1.4">
+  <header creationtool="ChatGPT" creationtoolversion="1.0" datatype="PlainText" segtype="sentence" adminlang="en-US" srclang="ru" o-tmf="TMX"/>
+  <body>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ - "СВЯТОЕ ОГНИЩЕ"</seg></tuv>
+      <tuv xml:lang="en-US"><seg>TECHNICAL DOCUMENTATION - "HOLY HEARTH"</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>1. ОБЩЕЕ ОПИСАНИЕ</seg></tuv>
+      <tuv xml:lang="en-US"><seg>1. GENERAL DESCRIPTION</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Святое Огнище - 2D rogue-lite платформер с процедурно генерируемыми руинами и системой магических рун. Игровой цикл строится вокруг коротких заходов (10-20 мин), сбора реликвий/рун и постепенного усиления персонажа.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Holy Hearth is a 2D rogue‑lite platformer featuring procedurally generated ruins and a system of magical runes. The game loop is built around short runs (10–20 minutes), collecting relics/runes and gradually strengthening the player character.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Цели разработки: отзывчивое платформенное управление, высокая реиграбельность, простая интеграция процедурной генерации.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Development goals: responsive platforming controls, high replayability, and easy integration of procedural generation.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>2. ИГРОВАЯ МЕХАНИКА</seg></tuv>
+      <tuv xml:lang="en-US"><seg>2. GAME MECHANICS</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>2.1 Управление и физика</seg></tuv>
+      <tuv xml:lang="en-US"><seg>2.1 Controls and Physics</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Действия: ходьба, двойной прыжок, скольжение по стенам, рывок.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Actions: walking, double jump, wall slide, dash.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Поддержка "coyote time" и буфера прыжка.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Supports coyote time and jump buffering.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Dash с краткой неуязвимостью.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Dash grants brief invulnerability.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>2.2 Магическая система</seg></tuv>
+      <tuv xml:lang="en-US"><seg>2.2 Magic System</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Стихии: Огонь, Ветер, Земля, Тень.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Elements: Fire, Wind, Earth, Shadow.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Руны устанавливаются в слоты, дают активные/пассивные эффекты.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Runes are equipped in slots and provide active and passive effects.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Комбинации рун генерируют гибридные навыки (табличные правила).</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Combinations of runes generate hybrid abilities (according to tabular rules).</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Мета-прогресс: улучшение слотов, открытие новых рун.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Meta‑progression: upgrading slots and unlocking new runes.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>2.3 Враги и боссы</seg></tuv>
+      <tuv xml:lang="en-US"><seg>2.3 Enemies and Bosses</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Типы врагов: патрульные, преследующие, дальнобойные, летающие.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Enemy types: patrolling, chasing, ranged, and flying.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>AI: простые FSM (Idle, Patrol, Alert, Chase, Attack).</seg></tuv>
+      <tuv xml:lang="en-US"><seg>AI: simple finite state machines (Idle, Patrol, Alert, Chase, Attack).</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Боссы с фазами и изменением поведения по порогам HP.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Bosses with phases and behavior changes at HP thresholds.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>3. ПРОЦЕДУРНАЯ ГЕНЕРАЦИЯ</seg></tuv>
+      <tuv xml:lang="en-US"><seg>3. PROCEDURAL GENERATION</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>3.1 Модули комнат</seg></tuv>
+      <tuv xml:lang="en-US"><seg>3.1 Room Modules</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Каждая комната описана JSON-файлом: входы/выходы, биом, длина, сложность, точки спавна, микромеханики.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Each room is described by a JSON file: entrances/exits, biome, length, complexity, spawn points, micro-mechanics.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>3.2 Алгоритм генерации</seg></tuv>
+      <tuv xml:lang="en-US"><seg>3.2 Generation Algorithm</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>1. Получение seed.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>1. Obtain seed.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>2. Выбор биома и профиля сложности.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>2. Select biome and complexity profile.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>3. Склейка совместимых комнат.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>3. Stitch compatible rooms together.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>4. Проверка валидности пути.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>4. Validate path correctness.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>5. Расстановка врагов и предметов по таблицам.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>5. Place enemies and objects according to tables.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>4. СИСТЕМЫ И АРХИТЕКТУРА</seg></tuv>
+      <tuv xml:lang="en-US"><seg>4. SYSTEMS AND ARCHITECTURE</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>4.1 Форматы данных</seg></tuv>
+      <tuv xml:lang="en-US"><seg>4.1 Data Formats</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>rooms/*.json - модули уровней</seg></tuv>
+      <tuv xml:lang="en-US"><seg>rooms/*.json - level modules</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>runes/*.json - руны</seg></tuv>
+      <tuv xml:lang="en-US"><seg>runes/*.json - runes</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>enemies/*.json - враги</seg></tuv>
+      <tuv xml:lang="en-US"><seg>enemies/*.json - enemies</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>4.2 Контракты между подсистемами</seg></tuv>
+      <tuv xml:lang="en-US"><seg>4.2 Contracts Between Subsystems</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Генератор -&gt; Сцена: список комнат + таблица спавна.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Generator -&gt; Scene: list of rooms + spawn table.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Рунная система -&gt; Игрок: набор активных эффектов.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Rune system -&gt; Player: set of active effects.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>AI -&gt; Уровень: точки пути, зоны агро.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>AI -&gt; Level: waypoints, aggro zones.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>4.3 Сохранение</seg></tuv>
+      <tuv xml:lang="en-US"><seg>4.3 Saving</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Мета-прогресс сохраняется постоянно.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Meta‑progression is saved persistently.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Прогресс внутри захода - частично, через чекпоинты.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>In‑run progress is saved partially via checkpoints.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>5. АРТ И ЗВУК</seg></tuv>
+      <tuv xml:lang="en-US"><seg>5. ART AND SOUND</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Рисованная 2D графика, параллакс 2-4 слоя.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Hand-drawn 2D graphics, parallax of 2–4 layers.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Частицы для магии и разрушений.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Particles for magic and destruction.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Динамическая музыка (глубина/опасность).</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Dynamic music (to convey depth/danger).</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>6. ПРОИЗВОДИТЕЛЬНОСТЬ И ПЛАТФОРМЫ</seg></tuv>
+      <tuv xml:lang="en-US"><seg>6. PERFORMANCE AND PLATFORMS</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Цель: 60 FPS на мобильных.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Target: 60 FPS on mobile.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Оптимизации: батчинг спрайтов, пул объектов.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Optimizations: sprite batching, object pooling.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Платформы: iOS/Android, далее PC и Switch.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Platforms: iOS/Android, then PC and Switch.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>7. MVP (МИНИМАЛЬНЫЙ СОСТАВ)</seg></tuv>
+      <tuv xml:lang="en-US"><seg>7. MVP (MINIMUM VIABLE PRODUCT)</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>6-8 комнатных модулей.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>6–8 room modules.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>3 биома.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>3 biomes.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>6 типов врагов + 1-2 босса.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>6 enemy types + 1–2 bosses.</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Базовая система рун (3 слота).</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Basic rune system (3 slots).</seg></tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="ru-RU"><seg>Генератор уровней + базовый UI/HUD.</seg></tuv>
+      <tuv xml:lang="en-US"><seg>Level generator + basic UI/HUD.</seg></tuv>
+    </tu>
+  </body>
+</tmx>

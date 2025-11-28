@@ -1,0 +1,66 @@
+TECHNICAL DOCUMENTATION - "HOLY HEARTH"
+
+1. GENERAL DESCRIPTION
+Holy Hearth is a 2D rogue‑lite platformer featuring procedurally generated ruins and a system of magical runes. The game loop is built around short runs (10–20 minutes), collecting relics/runes and gradually strengthening the player character.
+Development goals: responsive platforming controls, high replayability, and seamless integration of procedural generation.
+
+2. GAME MECHANICS
+2.1 Controls and Physics
+Actions: walking, double jump, wall slide, dash.
+Supports coyote time and jump buffering.
+Dash grants brief invulnerability.
+
+2.2 Magic System
+Elements: Fire, Wind, Earth, Shadow.
+Runes are equipped in slots and provide active and passive effects.
+Combinations of r﻿
+unes generate hybrid abilities following predefined rules.
+Meta‑progression: upgrading slots and unlocking new runes.
+
+2.3 Enemies and Bosses
+Enemy types: patrolling, chasing, ranged, and flying.
+AI: simple finite state machines (Idle, Patrol, Alert, Chase, Attack).
+Bosses have phases and change their behavior at HP thresholds.
+
+3. PROCEDURAL GENERATION
+3.1 Room Modules
+Each room is described by a JSON file: entrances/exits, biome, length, complexity, spawn points, and micro‑mechanics.
+
+3.2 Generation Algorithm
+1. Obtain seed.
+2. Select biome and difficulty profile.
+3. Stitch compatible rooms together.
+4. Validate the path.
+5. Place enemies and objects according to distribution tables.
+
+4. SYSTEMS AND ARCHITECTURE
+4.1 Data Formats
+rooms/*.json — level modules
+runes/*.json — runes
+enemies/*.json — enemies
+
+4.2 Contracts Between Subsystems
+Generator → Scene: list of rooms + spawn table.
+Rune system → Player: active effects.
+AI → Level: waypoints, aggro zones.
+
+4.3 Saving
+Meta‑progression is saved persistently.
+In‑run progress is saved partially via checkpoints.
+
+5. ART AND SOUND
+Hand‑drawn 2D graphics, 2–4 parallax layers.
+Particle effects for magic and destruction.
+Dynamic music reflecting depth and danger.
+
+6. PERFORMANCE AND PLATFORMS
+Target: 60 FPS on mobile.
+Optimizations: sprite batching, object pooling.
+Platforms: iOS/Android, later PC and Switch.
+
+7. MVP (MINIMUM VIABLE PRODUCT)
+6–8 room modules.
+3 biomes.
+6 enemy types + 1–2 bosses.
+Basic rune system (3 slots).
+Level generator + basic UI/HUD.
