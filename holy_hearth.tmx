@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tmx version="1.4">
-  <header creationtool="ChatGPT" creationtoolversion="1.0" datatype="PlainText" segtype="sentence" adminlang="en-US" srclang="ru" o-tmf="TMX"/>
+  <header creationtoolversion="1.0" datatype="PlainText" segtype="sentence" adminlang="en-US" srclang="ru" o-tmf="TMX"/>
   <body>
     <tu>
       <tuv xml:lang="ru-RU"><seg>ТЕХНИЧЕСКАЯ ДОКУМЕНТАЦИЯ - "СВЯТОЕ ОГНИЩЕ"</seg></tuv>
